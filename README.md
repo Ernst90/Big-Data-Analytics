@@ -1,5 +1,4 @@
 # Stochastic-Optimization-in-R
-
 Algorithms implemented: 
 - Stochastic Gradient Descent (SGD)
 - Stochastic Gradient Descent with Momentum (MSGD)
