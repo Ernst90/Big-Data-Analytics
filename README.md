@@ -1,2 +1,9 @@
 # Stochastic-Optimization-in-R
-stochastic gradient descent (SGD), stochastic gradient descent with momentum (MSGD), stochastic gradient descent with Nesterov accelerated gradient (NAGSGD), AdaGrad, RMSProp and Adam
+
+Algorithms implemented: 
+- Stochastic Gradient Descent (SGD)
+- Stochastic Gradient Descent with Momentum (MSGD)
+- Stochastic Gradient Descent with NesterovAccelerated Gradient (NAGSGD)
+- Adaptive Gradient Algorithm (AdaGrad)
+- Root Mean Square Propagation (RMSProp) 
+- Adaptive Moment Estimation (Adam)
