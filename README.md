@@ -6,3 +6,6 @@ Algorithms implemented:
 - Adaptive Gradient Algorithm (AdaGrad)
 - Root Mean Square Propagation (RMSProp) 
 - Adaptive Moment Estimation (Adam)
+Involved data sets:
+1) Small-sized: simulated data (n=)
+2) Large-sized: weather data (n=)
