@@ -11,5 +11,5 @@ Algorithms implemented:
 - Adaptive Moment Estimation (Adam)
 
 Involved data sets:
-1) Small: simulated data (n=1000) with 1 feature
-2) Large: weather data (n=96453) with 5 features
+- Question 1) Small: simulated data (n=1000) with 1 feature
+- Question 2) Large: weather data (n=96453) with 5 features
