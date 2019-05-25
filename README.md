@@ -2,7 +2,7 @@
 
 Goal: Implementation of stochastic optimizers and convergence analysis based on small and large data sets.
 
-Algorithms implemented: 
+Algorithms implemented
 - Stochastic Gradient Descent (SGD)
 - Stochastic Gradient Descent with Momentum (MSGD)
 - Stochastic Gradient Descent with Nesterov Accelerated Gradient (NAGSGD)
@@ -10,6 +10,6 @@ Algorithms implemented:
 - Root Mean Square Propagation (RMSProp) 
 - Adaptive Moment Estimation (Adam)
 
-Involved data sets:
-- Question 1) simulated data (n=1000) with 1 feature (small)
-- Question 2) weather data (n=96453) with 5 features (large)
+Involved data sets
+- Question 1: simulated data (n=1000) with 1 feature (small)
+- Question 2: weather data (n=96453) with 5 features (large)
