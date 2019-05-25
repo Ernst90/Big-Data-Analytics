@@ -1,4 +1,7 @@
 # Stochastic-Optimization-in-R
+
+Goal: Implementation of stochastic optimizers and efficiency analysis based on small and large data sets.
+
 Algorithms implemented: 
 - Stochastic Gradient Descent (SGD)
 - Stochastic Gradient Descent with Momentum (MSGD)
