@@ -1,3 +1,8 @@
+## Big Data Analytics (STATS 5016) - Masters Level 
+## Project: Stochastic Optimization
+## GUID: 2383746W
+
+
 ### Load R scripts with optimizers and cost functions
 
 source("optimizers.r")
@@ -32,7 +37,6 @@ lm_out$coefficients
 
 ################################ RUN OPTIMIZING ALGORITHMS ############################################### 
 
-
 ## Initial values of parameters, common across optimization algorithms
 theta0 <- c(7, -8)
 
@@ -49,7 +53,6 @@ niters <- 100
 gd_out <- gd(lmf, lmgrad, y, X, theta0, npars, ndata, a, niters)
 
 
-
 ### ALGORITHM 2 - SGD: STOCHASTIC GRADIENT DESCENT ###
 
 # learning rate
@@ -63,7 +66,6 @@ nsubsamples <- 100
 
 # Run SGD
 sgd_out <- sgd(lmf, lmgrad, y, X, theta0, npars, ndata, a, niters, nsubsamples)
-
 
 
 ### ALGORITHM 3 - MSGD: STOCHASTIC GRADIENT DESCENT MOMENTUM ###
@@ -87,7 +89,6 @@ m0 <- rep(0, npars)
 msgd_out <- msgd(lmf, lmgrad, y, X, theta0, npars, ndata, a, niters, nsubsamples, b, m0)
 
 
-
 ### ALGORITHM 4 - NAGSGD: STOCHASTIC GRADIENT DESCENT NESTEROV ACCELERATED GRADIENT 
 
 # learning rate
@@ -109,7 +110,6 @@ m0 <- rep(0, npars)
 nagsgd_out <- nagsgd(lmf, lmgrad, y, X, theta0, npars, ndata, a, niters, nsubsamples, b, m0)
 
 
-
 ### ALGORITHM 5 - AdaGad: ADAPTIVE GRADIENT ALGORITHM ###
 
 # learning rate
@@ -129,7 +129,6 @@ G0 <- rep(0, npars)
 
 # Run AdaGrad
 adagrad_out <- adagrad(lmf, lmgrad, y, X, theta0, npars, ndata, a, niters, nsubsamples, epsilon, G0)
-
 
 
 ### ALGORITHM 6 - RMSProp: ROOT MEAN SQUARE PROPAGATION ###
@@ -154,7 +153,6 @@ v0 <- rep(0, npars)
 
 # Run RMSprop
 rmsprop_out <- rmsprop(lmf, lmgrad, y, X, theta0, npars, ndata, a, niters, nsubsamples, c, epsilon, v0)
-
 
 
 ### ALGORITHM 7 - ADAM: ADAPTIVE MOMENT ESTIMATION ###
@@ -187,14 +185,11 @@ v0 <- rep(0, npars)
 adam_out <- adam(lmf, lmgrad, y, X, theta0, npars, ndata, a, niters, nsubsamples, b, c, epsilon, m0, v0)
 
 
-
 #################################### Answwers to Questions 1a) - 1e) #######################################################
-
 
 ### QUESTION 1a): save design matrix X to file "answer1a.csv"
 
 write.table(X, file="answer1a.csv", row.names=FALSE, col.names=FALSE, sep=",")
-
 
 ### QUESTION 1b): save parameter estimates to file "answer1b.csv"
 
@@ -211,7 +206,6 @@ theta_estimates <- cbind(
 
 write.table(theta_estimates, file="answer1b.csv", row.names=FALSE, col.names=TRUE, sep=",", quote=FALSE)
 
-
 ### QUESTION 1c): save last values of cost function to file "answer1c.csv"
 
 final_cost_values <- cbind(
@@ -224,7 +218,6 @@ final_cost_values <- cbind(
  ADAM = tail(adam_out$cost, n=1)
 )
 write.table(final_cost_values, file="answer1c.csv", row.names=FALSE, col.names=TRUE, sep=",", quote=FALSE)
-
 
 ### QUESTION 1d): save plot of cost function to file "answer1d.pdf"
 
@@ -240,7 +233,6 @@ ggplot() +
   theme(legend.title = element_text(size=9.4, face="bold")) 
 
 dev.off()
-
 
 ### QUESTION 1e): save phase plot of parameter theta_0 vs parameter theta_1 to file "answer1e.pdf"
 
