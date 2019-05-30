@@ -1,3 +1,8 @@
+## Big Data Analytics (STATS 5016) - Masters Level 
+## Project: Stochastic Optimization ALgorithms
+## GUID: 2383746W
+
+
 ### Cost function and Gradient cost
 
 ## Cost function for linear regression
