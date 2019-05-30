@@ -2,7 +2,6 @@
 ## Project: Stochastic Optimization
 ## GUID: 2383746W
 
-
 ### Load R scripts with optimizers and cost functions
 
 source("optimizers.r")
