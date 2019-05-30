@@ -1,5 +1,5 @@
 ## Big Data Analytics (STATS 5016) - Masters Level 
-## Project: Stochastic Optimization ALgorithms
+## Project: Stochastic Optimization
 ## GUID: 2383746W
 
 
