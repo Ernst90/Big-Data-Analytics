@@ -1,6 +1,6 @@
 # Stochastic-Optimization-in-R
 
-Goal: Implementation of stochastic optimizers and hyperparameter tuning.
+Project: Stochastic gradient descent in R: Implementation of stochastic algorithms with hyper-parameter tuning and efficiency analysis based on small and large datasets.
 
 Algorithms implemented
 - Stochastic Gradient Descent (SGD)
