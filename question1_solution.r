@@ -222,28 +222,67 @@ write.table(final_cost_values, file="answer1c.csv", row.names=FALSE, col.names=T
 
 pdf(file="answer1d.pdf", height=8, width=10)
 
+# NAGSGD vs AdaGrad
 ggplot() +
-  geom_path(data = as.data.frame(nagsgd_out$cost), aes(x = 1:niters, y = nagsgd_out$cost, color = "red")) +
-  geom_path(data = as.data.frame(adagrad_out$cost), aes(x = 1:niters, y = adagrad_out$cost, color = "blue")) +
-  ylim(0, 80) +
+  geom_path(data = as.data.frame(nagsgd_out$cost), aes(x = 1:niters, y = nagsgd_out$cost, color = "orange")) +
+  geom_path(data = as.data.frame(adagrad_out$cost), aes(x = 1:niters, y = adagrad_out$cost, color = "forestgreen")) +
+  xlim(0, 75) + ylim(0, 80) + theme_bw() +
   labs(title="Q.1.d: Plot of cost function", x="Iterations", y="Cost", 
        subtitle="NAGSGD: a=0.155 , b=0.58  |  AdaGrad: a=1.5") +
-  scale_color_identity(name = "Optimizer", breaks = c("red", "blue"), labels = c("NAGSGD", "AdaGrad"), guide = "legend") +
+  scale_color_identity(name = "Algorithm", breaks = c("orange", "forestgreen"), 
+                       labels = c("NAGSGD", "AdaGrad"), 
+                       guide = "legend") +
+  theme(legend.title = element_text(size=9.4, face="bold")) 
+
+########### Additional 1d) - all other Algorithms ############
+ggplot() +
+  geom_path(data = as.data.frame(gd_out$cost), aes(x = 1:niters, y = gd_out$cost, color = "red")) +
+  geom_path(data = as.data.frame(sgd_out$cost), aes(x = 1:niters, y = sgd_out$cost, color = "purple")) +
+  geom_path(data = as.data.frame(msgd_out$cost), aes(x = 1:niters, y = msgd_out$cost, color = "blue")) +
+  geom_path(data = as.data.frame(rmsprop_out$cost), aes(x = 1:niters, y = rmsprop_out$cost, color = "tan4")) +
+  geom_path(data = as.data.frame(adam_out$cost), aes(x = 1:niters, y = adam_out$cost, color = "cyan")) +
+  xlim(0, 75) + ylim(0, 80) + theme_bw() +
+  labs(title="Q.1.d: Additional plots of cost functions", x="Iterations", y="Cost", 
+       subtitle="GD: a=0.28  |  SGD: a=0.085  |  MSGD: a=0.105 , b=0.27     
+RMSProp: a=0.054 , c=0.999  |  ADAM: a=0.45 , b=0.554 , c=0.999") +
+  scale_color_identity(name = "Algorithm", breaks = c("red", "purple", "blue", "tan4", "cyan"), 
+                       labels = c("GD", "SGD", "MSGD", "RMSProp", "ADAM"), 
+                       guide = "legend") +
   theme(legend.title = element_text(size=9.4, face="bold")) 
 
 dev.off()
+
 
 ### QUESTION 1e): save phase plot of parameter theta_0 vs parameter theta_1 to file "answer1e.pdf"
 
 pdf(file="answer1e.pdf", height=8, width=10)
 
+## GD vs RMSprop
 ggplot() +
   geom_path(data = as.data.frame(gd_out$theta), aes(x = gd_out$theta[, 2], y = gd_out$theta[, 1], color = "red")) +
-  geom_path(data = as.data.frame(rmsprop_out$theta), aes(x = rmsprop_out$theta[, 2], y = rmsprop_out$theta[, 1], color = "blue")) +
-  geom_point(aes(x=lm_out$coefficients[2], y=lm_out$coefficients[1]), size = 1.5, colour="green") +
+  geom_path(data = as.data.frame(rmsprop_out$theta), aes(x = rmsprop_out$theta[, 2], y = rmsprop_out$theta[, 1], color = "tan4")) +
+  geom_point(aes(x=lm_out$coefficients[2], y=lm_out$coefficients[1]), size = 2.5, colour="black") + theme_bw() +
   labs(title="Q.1.e: Phase plot of" ~ theta[0]~vs~theta[1], x=expression(theta[1]), y=expression(theta[0]), 
-       subtitle="GD: a=0.28  |  RMSProp: a=0.05 , c=0.999") +
-  scale_color_identity(name = "Optimizer", breaks = c("red", "blue"), labels = c("GD", "RMSProp"), guide = "legend") +
+       subtitle="GD: a=0.28  |  RMSProp: a=0.054 , c=0.999") +
+  scale_color_identity(name = "Algorithm", breaks = c("red", "tan4"), 
+                       labels = c("GD", "RMSProp"), 
+                       guide = "legend") +
+  theme(legend.title = element_text(size=9.4, face="bold")) 
+
+########### Additional 1e) - all other Algorithms ############
+ggplot() +
+  geom_path(data = as.data.frame(sgd_out$theta), aes(x = sgd_out$theta[, 2], y = sgd_out$theta[, 1], color = "purple")) +
+  geom_path(data = as.data.frame(msgd_out$theta), aes(x = msgd_out$theta[, 2], y = msgd_out$theta[, 1], color = "blue")) +
+  geom_path(data = as.data.frame(nagsgd_out$theta), aes(x = nagsgd_out$theta[, 2], y = nagsgd_out$theta[, 1], color = "orange")) +
+  geom_path(data = as.data.frame(adagrad_out$theta), aes(x = adagrad_out$theta[, 2], y = adagrad_out$theta[, 1], color = "forestgreen")) +
+  geom_path(data = as.data.frame(adam_out$theta), aes(x = adam_out$theta[, 2], y = adam_out$theta[, 1], color = "cyan")) +
+  geom_point(aes(x=lm_out$coefficients[2], y=lm_out$coefficients[1]), size = 2.5, colour="black") + theme_bw() +
+  labs(title="Q.1.e: Additional phase plots of" ~ theta[0]~vs~theta[1], x=expression(theta[1]), y=expression(theta[0]), 
+       subtitle="SGD: a=0.085  |  MSGD: a=0.105 , b=0.27  |  NAGSGD: a=0.155 , b=0.58    
+AdaGrad: a=1.5  |  ADAM: a=0.45 , b=0.554 , c=0.999") +
+  scale_color_identity(name = "Algorithm", breaks = c("purple", "blue", "orange", "forestgreen", "cyan"), 
+                       labels = c("SGD", "MSGD", "NAGSGD", "AdaGrad", "ADAM"), 
+                       guide = "legend") +
   theme(legend.title = element_text(size=9.4, face="bold")) 
 
 dev.off()
