@@ -240,12 +240,12 @@ ggplot() +
   geom_path(data = as.data.frame(sgd_out$cost), aes(x = 1:niters, y = sgd_out$cost, color = "cyan")) +
   geom_path(data = as.data.frame(msgd_out$cost), aes(x = 1:niters, y = msgd_out$cost, color = "blue")) +
   geom_path(data = as.data.frame(rmsprop_out$cost), aes(x = 1:niters, y = rmsprop_out$cost, color = "brown")) +
-  geom_path(data = as.data.frame(adam_out$cost), aes(x = 1:niters, y = adam_out$cost, color = "forestgreen")) +
+  geom_path(data = as.data.frame(adam_out$cost), aes(x = 1:niters, y = adam_out$cost, color = "green")) +
   xlim(0, 75) + ylim(0, 80) + theme_bw() +
   labs(title="Q.1.d: Additional plots of cost functions", x="Iterations", y="Cost", 
        subtitle="GD: a=0.28  |  SGD: a=0.085  |  MSGD: a=0.105 , b=0.27     
 RMSProp: a=0.054 , c=0.999  |  ADAM: a=0.45 , b=0.554 , c=0.999") +
-  scale_color_identity(name = "Optimizer", breaks = c("red", "cyan", "blue", "brown", "forestgreen"), 
+  scale_color_identity(name = "Optimizer", breaks = c("red", "cyan", "blue", "brown", "green"), 
                        labels = c("GD", "SGD", "MSGD", "RMSProp", "ADAM"), 
                        guide = "legend") +
   theme(legend.title = element_text(size=9.4, face="bold")) 
@@ -275,12 +275,12 @@ ggplot() +
   geom_path(data = as.data.frame(msgd_out$theta), aes(x = msgd_out$theta[, 2], y = msgd_out$theta[, 1], color = "blue")) +
   geom_path(data = as.data.frame(nagsgd_out$theta), aes(x = nagsgd_out$theta[, 2], y = nagsgd_out$theta[, 1], color = "orange")) +
   geom_path(data = as.data.frame(adagrad_out$theta), aes(x = adagrad_out$theta[, 2], y = adagrad_out$theta[, 1], color = "purple")) +
-  geom_path(data = as.data.frame(adam_out$theta), aes(x = adam_out$theta[, 2], y = adam_out$theta[, 1], color = "forestgreen")) +
+  geom_path(data = as.data.frame(adam_out$theta), aes(x = adam_out$theta[, 2], y = adam_out$theta[, 1], color = "green")) +
   geom_point(aes(x=lm_out$coefficients[2], y=lm_out$coefficients[1]), size = 2.5, colour="black") + theme_bw() +
   labs(title="Q.1.e: Additional phase plots of" ~ theta[0]~vs~theta[1], x=expression(theta[1]), y=expression(theta[0]), 
        subtitle="SGD: a=0.085  |  MSGD: a=0.105 , b=0.27  |  NAGSGD: a=0.155 , b=0.58    
 AdaGrad: a=1.5  |  ADAM: a=0.45 , b=0.554 , c=0.999") +
-  scale_color_identity(name = "Optimizer", breaks = c("cyan", "blue", "orange", "purple", "forestgreen"), 
+  scale_color_identity(name = "Optimizer", breaks = c("cyan", "blue", "orange", "purple", "green"), 
                        labels = c("SGD", "MSGD", "NAGSGD", "AdaGrad", "ADAM"), 
                        guide = "legend") +
   theme(legend.title = element_text(size=9.4, face="bold")) 
